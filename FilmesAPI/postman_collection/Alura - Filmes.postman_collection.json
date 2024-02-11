@@ -1,0 +1,165 @@
+{
+	"info": {
+		"_postman_id": "f01af679-d571-4055-9580-c1daf5bb917a",
+		"name": "Alura - Filmes",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2957976"
+	},
+	"item": [
+		{
+			"name": "Adiciona Filme",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Titulo\": \"Avatar\",\r\n    \"Genero\": \"Ação\",\r\n    \"Duracao\": 140\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7078/filme",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7078",
+					"path": [
+						"filme"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Recupera Filmes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7078/filme?skip=0&take=5",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7078",
+					"path": [
+						"filme"
+					],
+					"query": [
+						{
+							"key": "skip",
+							"value": "0"
+						},
+						{
+							"key": "take",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "RecuperaFilmePorId",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7078/filme/4",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7078",
+					"path": [
+						"filme",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AtualizaFilme",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "  {\r\n    \"titulo\": \"Matrix Reloaded\",\r\n    \"genero\": \"Ação/Ficção\",\r\n    \"duracao\": 138\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7078/filme/2",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7078",
+					"path": [
+						"filme",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AtualizaFilmeParcial",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"op\":\"replace\",\r\n        \"path\": \"/titulo\",\r\n        \"value\": \"Ação/Ficção\"\r\n    },\r\n    {\r\n        \"op\":\"replace\",\r\n        \"path\": \"/duracao\",\r\n        \"value\": 138\r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7078/filme/2",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7078",
+					"path": [
+						"filme",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeletaFilme",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7078/filme/4",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7078",
+					"path": [
+						"filme",
+						"4"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
