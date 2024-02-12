@@ -21,7 +21,6 @@ namespace FilmesApi.Controllers
             _mapper = mapper;
         }
 
-
         [HttpPost]
         public IActionResult AdicionaCinema([FromBody] CreateCinemaDto cinemaDto)
         {
@@ -62,7 +61,6 @@ namespace FilmesApi.Controllers
             return NoContent();
         }
 
-
         [HttpDelete("{id}")]
         public IActionResult DeletaCinema(int id)
         {
@@ -75,6 +73,5 @@ namespace FilmesApi.Controllers
             _context.SaveChanges();
             return NoContent();
         }
-
     }
 }
