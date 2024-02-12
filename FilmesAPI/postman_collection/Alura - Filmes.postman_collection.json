@@ -7,159 +7,303 @@
 	},
 	"item": [
 		{
-			"name": "Adiciona Filme",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"Titulo\": \"Avatar\",\r\n    \"Genero\": \"Ação\",\r\n    \"Duracao\": 140\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "https://localhost:7078/filme",
-					"protocol": "https",
-					"host": [
-						"localhost"
-					],
-					"port": "7078",
-					"path": [
-						"filme"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Recupera Filmes",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "https://localhost:7078/filme?skip=0&take=5",
-					"protocol": "https",
-					"host": [
-						"localhost"
-					],
-					"port": "7078",
-					"path": [
-						"filme"
-					],
-					"query": [
-						{
-							"key": "skip",
-							"value": "0"
+			"name": "Filmes",
+			"item": [
+				{
+					"name": "Adiciona Filme",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Titulo\": \"Alura Filme - Teste\",\r\n    \"Genero\": \"Aventura\",\r\n    \"Duracao\": 120\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
 						},
-						{
-							"key": "take",
-							"value": "5"
+						"url": {
+							"raw": "https://localhost:7078/filme",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7078",
+							"path": [
+								"filme"
+							]
 						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "RecuperaFilmePorId",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "https://localhost:7078/filme/4",
-					"protocol": "https",
-					"host": [
-						"localhost"
-					],
-					"port": "7078",
-					"path": [
-						"filme",
-						"4"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "AtualizaFilme",
-			"request": {
-				"method": "PUT",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "  {\r\n    \"titulo\": \"Matrix Reloaded\",\r\n    \"genero\": \"Ação/Ficção\",\r\n    \"duracao\": 138\r\n  }",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "https://localhost:7078/filme/2",
-					"protocol": "https",
-					"host": [
-						"localhost"
-					],
-					"port": "7078",
-					"path": [
-						"filme",
-						"2"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "AtualizaFilmeParcial",
-			"request": {
-				"method": "PATCH",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "[\r\n    {\r\n        \"op\":\"replace\",\r\n        \"path\": \"/titulo\",\r\n        \"value\": \"Ação/Ficção\"\r\n    },\r\n    {\r\n        \"op\":\"replace\",\r\n        \"path\": \"/duracao\",\r\n        \"value\": 138\r\n    }\r\n]",
-					"options": {
-						"raw": {
-							"language": "json"
+				{
+					"name": "Recupera Filmes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7078/filme",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7078",
+							"path": [
+								"filme"
+							],
+							"query": [
+								{
+									"key": "skip",
+									"value": "0",
+									"disabled": true
+								},
+								{
+									"key": "take",
+									"value": "5",
+									"disabled": true
+								}
+							]
 						}
-					}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "https://localhost:7078/filme/2",
-					"protocol": "https",
-					"host": [
-						"localhost"
-					],
-					"port": "7078",
-					"path": [
-						"filme",
-						"2"
-					]
+				{
+					"name": "RecuperaFilmePorId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7078/filme/100",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7078",
+							"path": [
+								"filme",
+								"100"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AtualizaFilme",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "  {\r\n    \"titulo\": \"Matrix Reloaded\",\r\n    \"genero\": \"Ação/Ficção\",\r\n    \"duracao\": 138\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7078/filme/20",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7078",
+							"path": [
+								"filme",
+								"20"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AtualizaFilmeParcial",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"op\":\"replace\",\r\n        \"path\": \"/titulo\",\r\n        \"value\": \"Ação/Ficção\"\r\n    },\r\n    {\r\n        \"op\":\"replace\",\r\n        \"path\": \"/duracao\",\r\n        \"value\": 138\r\n    }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7078/filme/20",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7078",
+							"path": [
+								"filme",
+								"20"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeletaFilme",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7078/filme/5",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7078",
+							"path": [
+								"filme",
+								"5"
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
 		},
 		{
-			"name": "DeletaFilme",
-			"request": {
-				"method": "DELETE",
-				"header": [],
-				"url": {
-					"raw": "https://localhost:7078/filme/4",
-					"protocol": "https",
-					"host": [
-						"localhost"
-					],
-					"port": "7078",
-					"path": [
-						"filme",
-						"4"
-					]
+			"name": "Endereco",
+			"item": [
+				{
+					"name": "Adiciona Endereco",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Logradouro\": \"Rua das Couves - Teste\",\r\n    \"Numero\": 600\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7078/endereco",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7078",
+							"path": [
+								"endereco"
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
+		},
+		{
+			"name": "Cinema",
+			"item": [
+				{
+					"name": "Adiciona Cinema",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Nome\": \"Alura Cinemas - Teste\",\r\n    \"EnderecoId\": 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7078/cinema",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7078",
+							"path": [
+								"cinema"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Recupera Cinema",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7078/cinema",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7078",
+							"path": [
+								"cinema"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Sessão",
+			"item": [
+				{
+					"name": "Adiciona Sessao",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"FilmeId\": 6,\r\n    \"CinemaId\": 4\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7078/sessao",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7078",
+							"path": [
+								"sessao"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Recupera Sessao",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7078/sessao",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7078",
+							"path": [
+								"sessao"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }
