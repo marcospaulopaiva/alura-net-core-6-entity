@@ -43,7 +43,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://localhost:7078/filme",
+							"raw": "https://localhost:7078/filme?skip=0&take=5&nomeCinema=Alura%20Cinema%20-%20Teste",
 							"protocol": "https",
 							"host": [
 								"localhost"
@@ -55,13 +55,15 @@
 							"query": [
 								{
 									"key": "skip",
-									"value": "0",
-									"disabled": true
+									"value": "0"
 								},
 								{
 									"key": "take",
-									"value": "5",
-									"disabled": true
+									"value": "5"
+								},
+								{
+									"key": "nomeCinema",
+									"value": "Alura%20Cinema%20-%20Teste"
 								}
 							]
 						}
@@ -147,7 +149,7 @@
 					"response": []
 				},
 				{
-					"name": "DeletaFilme",
+					"name": "Deleta Filme",
 					"request": {
 						"method": "DELETE",
 						"header": [],
@@ -198,6 +200,45 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Recupera Endereco",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7078/endereco",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7078",
+							"path": [
+								"endereco"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deleta Endereco",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7078/endereco/2",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7078",
+							"path": [
+								"endereco",
+								"2"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -211,7 +252,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"Nome\": \"Alura Cinemas - Teste\",\r\n    \"EnderecoId\": 3\r\n}",
+							"raw": "{\r\n    \"Nome\": \"Alura Cinema - Teste\",\r\n    \"EnderecoId\": 2\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -238,7 +279,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://localhost:7078/cinema",
+							"raw": "https://localhost:7078/cinema?enderecoid=2",
 							"protocol": "https",
 							"host": [
 								"localhost"
@@ -246,6 +287,12 @@
 							"port": "7078",
 							"path": [
 								"cinema"
+							],
+							"query": [
+								{
+									"key": "enderecoid",
+									"value": "2"
+								}
 							]
 						}
 					},
@@ -263,7 +310,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"FilmeId\": 6,\r\n    \"CinemaId\": 4\r\n}",
+							"raw": "{\r\n    \"FilmeId\": 2,\r\n    \"CinemaId\": 2\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -290,14 +337,16 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://localhost:7078/sessao",
+							"raw": "https://localhost:7078/sessao/2/2",
 							"protocol": "https",
 							"host": [
 								"localhost"
 							],
 							"port": "7078",
 							"path": [
-								"sessao"
+								"sessao",
+								"2",
+								"2"
 							]
 						}
 					},

@@ -45,9 +45,18 @@ public class FilmeController : ControllerBase
     /// <response code="200">Caso a busca seja feita com sucesso</response>
     [HttpGet]
     [ProducesResponseType(StatusCodes.Status200OK)]
-    public IEnumerable<ReadFilmeDto> RecuperaFilmes([FromQuery] int skip = 0, int take = 20)
+    public IEnumerable<ReadFilmeDto> RecuperaFilmes(
+        [FromQuery] int skip = 0, 
+        [FromQuery] int take = 20,
+        [FromQuery] string? nomeCinema = null)
     {
-        return _mapper.Map<List<ReadFilmeDto>>(_context.Filmes.Skip(skip).Take(take).ToList());
+        if (nomeCinema == null)
+        {
+            return _mapper.Map<List<ReadFilmeDto>>(_context.Filmes.Skip(skip).Take(take).ToList());
+        }
+        return _mapper.Map<List<ReadFilmeDto>>(
+            _context.Filmes.Skip(skip).Take(take)
+            .Where(filme => filme.Sessoes.Any(sessao => sessao.Cinema.Nome == nomeCinema)).ToList());
     }
 
     /// <summary>
